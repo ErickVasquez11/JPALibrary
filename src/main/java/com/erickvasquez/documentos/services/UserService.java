@@ -7,9 +7,10 @@ import com.erickvasquez.documentos.models.dtos.users.UpdateUserDTO;
 import com.erickvasquez.documentos.models.entities.User;
 
 public interface UserService {
-	void save(RegisterUserDTO userinfo) throws Exception;
-	void update(UpdateUserDTO userInfo) throws Exception;
-	void deleteById(String code) throws Exception;
-	User findOneById(String code);
-	List<User> findAll();
+	
+	  void save(RegisterUserDTO userInfo) throws Exception;
+	  void update(UpdateUserDTO userInfo) throws Exception;
+	  void deleteById(String code) throws Exception;
+	  User findOneById(String code);
+	  List<User> findAll();
 }

@@ -38,7 +38,7 @@ public class Song {
 	@JsonIgnore
 	private List<SongXPlaylist> songxplaylists;	
 	
-	private Song(String title, int duration) {
+	public Song(String title, int duration) {
 		this.title = title;
 		this.duration = duration;
 	}

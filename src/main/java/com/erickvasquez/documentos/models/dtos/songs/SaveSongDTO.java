@@ -8,8 +8,8 @@ import lombok.Data;
 @AllArgsConstructor
 public class SaveSongDTO {
 	
-	@NotBlank(message = "Name is required")
-	private String name;
+	@NotBlank(message = "Title is required")
+	private String title;
 	
 	@NotBlank(message = "Duration code is required")
 	private int duration;
