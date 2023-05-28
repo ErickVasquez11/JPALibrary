@@ -20,6 +20,7 @@ import com.erickvasquez.documentos.models.dtos.response.MessageDTO;
 import com.erickvasquez.documentos.models.dtos.users.ChangePasswordDTO;
 import com.erickvasquez.documentos.models.dtos.users.RegisterUserDTO;
 import com.erickvasquez.documentos.models.dtos.users.UpdateUserDTO;
+import com.erickvasquez.documentos.models.entities.PlayList;
 import com.erickvasquez.documentos.models.entities.User;
 import com.erickvasquez.documentos.services.UserService;
 import com.erickvasquez.documentos.utils.RequestErrorHandler;
@@ -33,7 +34,6 @@ public class UserController {
 	
 	@Autowired
 	private UserService userService;
-	
 	@Autowired
 	private RequestErrorHandler errorHandler;
 	
@@ -67,6 +67,17 @@ public class UserController {
 			return new ResponseEntity<>(new MessageDTO("user not found"), HttpStatus.NOT_FOUND);
 		
 		return new ResponseEntity<>(user, HttpStatus.OK);
+	}
+	
+	@GetMapping("/{id}/play-lists")
+	public ResponseEntity<?> getUserPlayLists(@PathVariable String id) {
+		User user = userService.findOneById(id);
+		
+		if (user == null)
+			return new ResponseEntity<>(new MessageDTO("user not found"), HttpStatus.NOT_FOUND);
+		
+		List<PlayList> playlists = user.getPlaylists();
+		return new ResponseEntity<>(playlists, HttpStatus.OK);
 	}
 	
 	@PutMapping("")

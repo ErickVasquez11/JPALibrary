@@ -21,7 +21,7 @@ import lombok.ToString;
 @ToString(exclude = {"playlists"})
 @NoArgsConstructor
 @Entity
-@Table(name = "User")
+@Table(name = "users")
 public class User {
 	@Id
 	@Column(name = "code")
