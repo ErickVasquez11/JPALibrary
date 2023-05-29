@@ -58,8 +58,8 @@ public class SongServiceImplement implements SongService{
 	}
 
 	@Override
-	public Song findOneByTitle(String name) {
-		return songRepository.findOneByTitle(name);
+	public Song findOneByTitle(String title) {
+		return songRepository.findOneByTitle(title);
 	}
 
 	@Override

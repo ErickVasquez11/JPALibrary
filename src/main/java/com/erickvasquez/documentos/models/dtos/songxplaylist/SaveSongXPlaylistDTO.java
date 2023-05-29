@@ -10,6 +10,7 @@ public class SaveSongXPlaylistDTO {
 
 	@NotBlank(message = "song code is required")
 	private String songCode;
+	
 	@NotBlank(message = "playlist code is required")
 	private String playlistCode;
 }

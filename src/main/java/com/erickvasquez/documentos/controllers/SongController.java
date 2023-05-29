@@ -26,7 +26,7 @@ import com.erickvasquez.documentos.utils.RequestErrorHandler;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/songs")
+@RequestMapping("/song")
 @CrossOrigin("*")
 public class SongController {
 
@@ -35,13 +35,13 @@ public class SongController {
 	@Autowired
 	private RequestErrorHandler errorHandler;
 	
-	@GetMapping("")
+	@GetMapping("All/song")
 	public ResponseEntity<?> getSongs() {
-		List<Song> songs = songService.findAll();
-		return new ResponseEntity<>(songs, HttpStatus.OK);
+		List<Song> song = songService.findAll();
+		return new ResponseEntity<>(song, HttpStatus.OK);
 	}
 	
-	@GetMapping("/{title}")
+	@GetMapping("/song/{title}")
 	public ResponseEntity<?> getSongByTitle(@PathVariable String title) {
 		Song song = songService.findOneByTitle(title);
 		if (song == null)
@@ -59,7 +59,7 @@ public class SongController {
 		return new ResponseEntity<>(song, HttpStatus.OK);
 	}
 	
-	@PostMapping("")
+	@PostMapping("/savesong")
 	public ResponseEntity<?> createSong(
 			@ModelAttribute @Valid SaveSongDTO data, BindingResult validations) {
 		if (validations.hasErrors()) {
@@ -75,7 +75,7 @@ public class SongController {
 		}
 	}
 	
-	@PutMapping("")
+	@PutMapping("/updatesong")
 	public ResponseEntity<?> updateSong(
 			@ModelAttribute @Valid UpdateSongDTO data, BindingResult validations) {
 		if (validations.hasErrors()) {
