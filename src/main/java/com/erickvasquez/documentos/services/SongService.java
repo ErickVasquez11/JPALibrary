@@ -12,6 +12,6 @@ public interface SongService {
     void update(UpdateSongDTO songInfo) throws Exception;
     void deleteOneById(String code) throws Exception;
     Song findOneById(String code);
-    Song findOneByTitle(String name);
+    Song findOneByTitle(String title);
     List<Song> findAll();
 }

@@ -32,13 +32,13 @@ public class Song {
 	private String title;
 	
 	@Column(name = "duration")
-	private Integer duration;
+	private int duration;
 	
 	@OneToMany(mappedBy = "song",fetch = FetchType.LAZY)
 	@JsonIgnore
 	private List<SongXPlaylist> songxplaylists;	
 	
-	public Song(String title, Integer duration) {
+	public Song(String title, int duration) {
 		this.title = title;
 		this.duration = duration;
 	}

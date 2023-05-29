@@ -35,13 +35,13 @@ public class SongController {
 	@Autowired
 	private RequestErrorHandler errorHandler;
 	
-	@GetMapping("All/song")
+	@GetMapping("")
 	public ResponseEntity<?> getSongs() {
 		List<Song> song = songService.findAll();
 		return new ResponseEntity<>(song, HttpStatus.OK);
 	}
 	
-	@GetMapping("/song/{title}")
+	@GetMapping("/{title}")
 	public ResponseEntity<?> getSongByTitle(@PathVariable String title) {
 		Song song = songService.findOneByTitle(title);
 		if (song == null)
@@ -49,6 +49,7 @@ public class SongController {
 		
 		return new ResponseEntity<>(song, HttpStatus.OK);
 	}
+	
 	
 	@GetMapping("/code/{code}")
 	public ResponseEntity<?> getSongByCode(@PathVariable String code) {
@@ -59,7 +60,7 @@ public class SongController {
 		return new ResponseEntity<>(song, HttpStatus.OK);
 	}
 	
-	@PostMapping("/savesong")
+	@PostMapping("")
 	public ResponseEntity<?> createSong(
 			@ModelAttribute @Valid SaveSongDTO data, BindingResult validations) {
 		if (validations.hasErrors()) {
