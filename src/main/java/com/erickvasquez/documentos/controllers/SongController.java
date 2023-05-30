@@ -35,6 +35,7 @@ public class SongController {
 	@Autowired
 	private RequestErrorHandler errorHandler;
 	
+	//rute /song
 	@GetMapping("")
 	public ResponseEntity<?> getSongs() {
 		List<Song> song = songService.findAll();
