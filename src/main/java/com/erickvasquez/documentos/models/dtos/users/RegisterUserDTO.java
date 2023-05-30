@@ -19,6 +19,6 @@ public class RegisterUserDTO {
 	
 	@NotBlank(message = "password is required")
 	@Size(min = 8, message = "password size is 8 chars")
-	@Pattern(regexp = "^[a-zA-Z0-9 ._-:\\?]+$")
+	@Pattern(regexp = "^[a-zA-Z0-9._?]+$")
 	private String password;
 }
