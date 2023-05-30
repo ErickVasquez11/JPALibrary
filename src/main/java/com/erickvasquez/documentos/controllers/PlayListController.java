@@ -114,11 +114,11 @@ public class PlayListController {
 					errorHandler.mapErrors(validations.getFieldErrors()), HttpStatus.BAD_REQUEST);
 		}
 		
-		Song song = songService.findOneById(data.getSongCode());
+		Song song = songService.findOneById(data.getSong_code());
 		if (song == null)
 			return new ResponseEntity<>(new MessageDTO("song not found"), HttpStatus.NOT_FOUND);
 		
-		PlayList playlist = playlistService.findOneById(data.getPlaylistCode());
+		PlayList playlist = playlistService.findOneById(data.getPlaylist_code());
 		if (playlist == null)
 			return new ResponseEntity<>(new MessageDTO("playlist not found"), HttpStatus.NOT_FOUND);
 			

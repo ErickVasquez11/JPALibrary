@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,7 +38,7 @@ public class UserController {
 	@Autowired
 	private RequestErrorHandler errorHandler;
 	
-	@PostMapping("")
+	@PostMapping("/auth/singup")
 	public ResponseEntity<?> register(
 			@ModelAttribute @Valid RegisterUserDTO data, BindingResult validations) {
 		if (validations.hasErrors()) {
@@ -79,6 +80,8 @@ public class UserController {
 		List<PlayList> playlists = user.getPlaylists();
 		return new ResponseEntity<>(playlists, HttpStatus.OK);
 	}
+	
+	
 	
 	@PutMapping("")
 	public ResponseEntity<?> updateUser(

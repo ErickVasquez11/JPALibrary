@@ -9,8 +9,11 @@ import lombok.Data;
 public class SaveSongXPlaylistDTO {
 
 	@NotBlank(message = "song code is required")
-	private String songCode;
+	private String date_added;
 	
 	@NotBlank(message = "playlist code is required")
-	private String playlistCode;
+	private String playlist_code;
+	
+	@NotBlank(message = "Song code is required")
+	private String song_code;
 }
