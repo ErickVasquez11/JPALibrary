@@ -35,7 +35,7 @@ import com.erickvasquez.documentos.utils.RequestErrorHandler;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/play-lists")
+@RequestMapping("/playlist")
 @CrossOrigin("*")
 public class PlayListController {
 	
@@ -51,6 +51,7 @@ public class PlayListController {
 	@Autowired
 	private RequestErrorHandler errorHandler;
 	
+	// Create /playlist
 	@GetMapping("")
 	public ResponseEntity<?> getPlayLists() {
 		List<PlayList> playlist = playlistService.findAll();
