@@ -2,6 +2,7 @@ package com.erickvasquez.documentos.models.dtos.users;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -17,6 +18,7 @@ public class RegisterUserDTO {
 	private String email;
 	
 	@NotBlank(message = "password is required")
-	@Size(min = 5, message = "password size is 5 chars")
+	@Size(min = 8, message = "password size is 8 chars")
+	@Pattern(regexp = "^[a-zA-Z0-9 ._-:\\?]+$")
 	private String password;
 }

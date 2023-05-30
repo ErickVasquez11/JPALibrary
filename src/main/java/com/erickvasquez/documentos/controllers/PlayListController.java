@@ -51,13 +51,14 @@ public class PlayListController {
 	@Autowired
 	private RequestErrorHandler errorHandler;
 	
-	// Create /playlist
+	
 	@GetMapping("")
 	public ResponseEntity<?> getPlayLists() {
 		List<PlayList> playlist = playlistService.findAll();
 		return new ResponseEntity<>(playlist, HttpStatus.OK);
 	}
 	
+	//Create playlist/code
 	@GetMapping("/{id}")
 	public ResponseEntity<?> getPlayList(@PathVariable String id) {
 		PlayList playlist = playlistService.findOneById(id);
