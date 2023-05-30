@@ -13,5 +13,5 @@ import lombok.Data;
 public class PlayListSongsDTO {
 
 	private PlayList playlist;
-	private List<Song>songs;
+	private List<Song>song;
 }

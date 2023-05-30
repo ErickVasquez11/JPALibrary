@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.erickvasquez.documentos.services.PlaylistService;
 
 @RestController
-@RequestMapping("/play-lists")
+@RequestMapping("/playlist")
 @CrossOrigin("*")
 public class SongxPlayListController {
 

@@ -10,10 +10,6 @@ import com.erickvasquez.documentos.models.entities.SongXPlaylist;
 
 public interface SongXPlaylistService {
 	void save(Song song, PlayList playlist) throws Exception;
+	void delete(String songCode, String PlaylistCode) throws Exception;
 	
-	/*
-	List<SongXPlaylist> findAll();
-	SongXPlaylistService findOneById(UUID id);
-	void delete (String insertion_code) throws Exception;
-	*/
 }

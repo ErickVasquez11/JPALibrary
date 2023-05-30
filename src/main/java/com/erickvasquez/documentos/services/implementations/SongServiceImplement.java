@@ -20,12 +20,12 @@ public class SongServiceImplement implements SongService{
 
 	@Override
 	public void save(SaveSongDTO songInfo) throws Exception {
-		Song Song = new Song(
+		Song song = new Song(
 				songInfo.getTitle(),
 				songInfo.getDuration()
 				);
 		
-		songRepository.save(Song);
+		songRepository.save(song);
 	}
 
 	@Override
@@ -58,12 +58,13 @@ public class SongServiceImplement implements SongService{
 	}
 
 	@Override
-	public Song findOneByTitle(String title) {
-		return songRepository.findOneByTitle(title);
+	public Song findOneByTitle(String name) {
+		return songRepository.findOneByTitle(name);
 	}
 
 	@Override
 	public List<Song> findAll() {
 		return songRepository.findAll();
 	}
+	
 }

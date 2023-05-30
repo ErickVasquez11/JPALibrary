@@ -88,6 +88,8 @@ public class PlayListController {
 		return new ResponseEntity<>(response, HttpStatus.OK);
 	}
 	
+
+	
 	@PostMapping("")
 	public ResponseEntity<?> createPlayList(
 			@ModelAttribute @Valid SavePlayListDTO data, BindingResult validations) {
@@ -108,6 +110,7 @@ public class PlayListController {
 		}
 	}
 	
+	//Add song
 	@PostMapping("add-song")
 	public ResponseEntity<?> addSongToPlaylist(
 			@ModelAttribute @Valid SaveSongXPlaylistDTO data, BindingResult validations) {
@@ -116,11 +119,11 @@ public class PlayListController {
 					errorHandler.mapErrors(validations.getFieldErrors()), HttpStatus.BAD_REQUEST);
 		}
 		
-		Song song = songService.findOneById(data.getSong_code());
+		Song song = songService.findOneById(data.getSongCode());
 		if (song == null)
 			return new ResponseEntity<>(new MessageDTO("song not found"), HttpStatus.NOT_FOUND);
 		
-		PlayList playlist = playlistService.findOneById(data.getPlaylist_code());
+		PlayList playlist = playlistService.findOneById(data.getPlaylistCode());
 		if (playlist == null)
 			return new ResponseEntity<>(new MessageDTO("playlist not found"), HttpStatus.NOT_FOUND);
 			

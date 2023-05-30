@@ -7,13 +7,9 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class SaveSongXPlaylistDTO {
-
-	@NotBlank(message = "song code is required")
-	private String date_added;
-	
 	@NotBlank(message = "playlist code is required")
-	private String playlist_code;
+	private String playlistCode;
 	
 	@NotBlank(message = "Song code is required")
-	private String song_code;
+	private String songCode;
 }
