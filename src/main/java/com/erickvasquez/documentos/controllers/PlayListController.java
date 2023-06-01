@@ -69,7 +69,9 @@ public class PlayListController {
 		return new ResponseEntity<>(playlist, HttpStatus.OK);
 	}
 	
+	// obtenes la lista de canciones del usuario
 	@GetMapping("/{id}/songs")
+
 	public ResponseEntity<?> getPlayListSongs(@PathVariable String id) {
 		PlayList playlist = playlistService.findOneById(id);
 		
